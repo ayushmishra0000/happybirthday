@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+    position:relative;
+}
+
+.container{
+    max-width:800px;
+    padding:30px;
+    z-index:10;
+    position:relative;
+}
+
+h1{
+    font-size:4rem;
+    margin-bottom:15px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #fff;
+    }
+    to{
+        text-shadow:0 0 30px #fff,0 0 60px #ff4f81;
+    }
+}
+
+.subtitle{
+    font-size:1.5rem;
+    margin-bottom:20px;
+}
+
+.message{
+    font-size:1.15rem;
+    line-height:1.8;
+    margin:20px 0;
+}
+
+button{
+    background:white;
+    color:#ff4f81;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+button:disabled{
+    cursor:default;
+    opacity:0.9;
+}
+
+.surprise{
+    display:none;
+    margin-top:25px;
+    font-size:1.3rem;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    opacity:0.7;
+    pointer-events:none;
+    animation:float linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}
+
+footer{
+    margin-top:30px;
+    opacity:0.9;
+    font-size:0.95rem;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.5rem;
+    }
+
+    .subtitle{
+        font-size:1.2rem;
+    }
+
+    .message{
+        font-size:1rem;
+    }
+
+    button{
+        padding:12px 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎂 Happy Birthday ❤️</h1>
+
+    <div class="subtitle">
+        To my beautiful Girlfriend,
+        <br>
+        <strong>MADHAVI</strong>
+    </div>
+
+    <div class="message">
+        Today is all about celebrating the most amazing person in my life.
+        Thank you for your love, your smile, your kindness, and every beautiful
+        moment we've shared together.
+
+        <br><br>
+
+        Your birthday is not only special for you, but also for me because now
+        you are such an important part of my life ❤️
+
+        <br><br>
+
+        This day is special for your parents because you came into their lives,
+        and I believe God gave them the most beautiful gift when He sent you ❤️
+
+        <br><br>
+
+        HAPPY BIRTHDAY TO YOU BACCHA 🎂❤️
+
+        <br><br>
+
+        You make every day brighter, every challenge easier,
+        and every memory more special.
+
+        <br><br>
+
+        I hope this year brings you endless happiness,
+        success, laughter, and all the love your heart can hold.
+
+        <br><br>
+
+        Your presence means a lot to me ❤️❤️
+
+        <br><br>
+
+        ❤️ I love you more than words can express ❤️
+    </div>
+
+    <button onclick="showSurprise()" id="surpriseBtn">
+        Open My Surprise 🎁
+    </button>
+
+    <div class="surprise" id="surprise">
+        💖 You are my favorite person,
+        my best friend,
+        my happiness,
+        and my forever love.
+
+        <br><br>
+
+        Happy Birthday, Princess 👑❤️
+    </div>
+
+    <footer>
+        Made with ❤️ just for you
+    </footer>
+
+</div>
+
+<script>
+function showSurprise() {
+
+    document.getElementById("surprise").style.display = "block";
+
+    const btn = document.getElementById("surpriseBtn");
+    btn.disabled = true;
+    btn.innerHTML = "❤️ Surprise Opened ❤️";
+
+    launchConfetti();
+}
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 25 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 5 + 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 9000);
+}
+
+setInterval(createHeart, 300);
+
+function launchConfetti() {
+
+    for(let i = 0; i < 150; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.style.position = "absolute";
+        confetti.style.width = "10px";
+        confetti.style.height = "10px";
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.top = "-20px";
+        confetti.style.borderRadius = "50%";
+        confetti.style.background =
+            `hsl(${Math.random()*360},100%,70%)`;
+
+        document.body.appendChild(confetti);
+
+        const fallDuration = Math.random() * 5 + 3;
+
+        confetti.animate(
+            [
+                { transform: "translateY(0px) rotate(0deg)" },
+                {
+                    transform:
+                    `translateY(${window.innerHeight + 100}px)
+                    rotate(${Math.random()*720}deg)`
+                }
+            ],
+            {
+                duration: fallDuration * 1000,
+                easing: "linear"
+            }
+        );
+
+        setTimeout(() => {
+            confetti.remove();
+        }, fallDuration * 1000);
+    }
+}
+</script>
+
+</body>
+</html>
